@@ -97,7 +97,7 @@
           </h1>
 
           <p class="hero-desc" data-i18n="hero_desc">
-            عربية توصلك لباب الفندق، أجمل الأماكن السياحية في الـ 27 محافظة، وحجز فنادق بأسعار مرتّبة من الأرخص للأغلى — كل ده في تطبيق واحد.
+            عربية توصلك لباب الفندق، أجمل الأماكن السياحية في الـ 27 محافظة، وحجز فنادق مميزة — كل ده في تطبيق واحد.
           </p>
 
           <div class="hero-search-wrap">
@@ -195,9 +195,9 @@
           </article>
           <article class="feature-card reveal">
             <div class="feature-icon">🏨</div>
-            <h3 data-i18n="feat3_t">احجز فندقك من الأرخص للأغلى</h3>
-            <p data-i18n="feat3_d">فلتر حسب المحافظة وعدد النجوم، ورتّب الأسعار تصاعدي أو تنازلي.</p>
-            <span class="feature-tag" data-i18n="feat3_tag">حساب تلقائي للإجمالي</span>
+            <h3 data-i18n="feat3_t">احجز أشهر الفنادق</h3>
+            <p data-i18n="feat3_d">استعرض أرقى الفنادق المصرية واجحز إقامتك بكل سهولة.</p>
+            <span class="feature-tag" data-i18n="feat3_tag">فنادق مميزة</span>
           </article>
           <article class="feature-card reveal">
             <div class="feature-icon">🗺️</div>
@@ -332,53 +332,43 @@
       </div>
     </section>
 
+    <!-- قسم أشهر الفنادق كمثال بدون زحمة الفلاتر -->
     <section class="section section-alt" id="hotels">
       <div class="container">
         <header class="section-head reveal">
-          <span class="pill" data-i18n="hotels_pill">🏨 الإقامة</span>
-          <h2 data-i18n="hotels_title">احجز فندقك بأفضل سعر</h2>
-          <p data-i18n="hotels_desc">الأسعار مرتبة من الأرخص للأغلى افتراضيًا.</p>
+          <span class="pill">🏨 الإقامة</span>
+          <h2>أشهر الفنادق كمثال</h2>
+          <p>اخترنا لك نخبة من أشهر وأرقى الفنادق في مصر لإقامة مميزة ومريحة.</p>
         </header>
 
-        <div class="toolbar reveal">
-          <div class="toolbar-search">
-            <span>🔍</span>
-            <input type="search" id="hotelSearch" placeholder="ابحث…" data-i18n-ph="hotels_search_ph" />
-          </div>
-          <select id="hotelGov"><option value="" data-i18n="all_govs">كل المحافظات</option></select>
-          <select id="hotelStars">
-            <option value="" data-i18n="all_stars">كل التصنيفات</option>
-            <option value="5" data-i18n="stars_5">5 نجوم</option>
-            <option value="4" data-i18n="stars_4">4 نجوم</option>
-            <option value="3" data-i18n="stars_3">3 نجوم</option>
-          </select>
-          <select id="hotelSort">
-            <option value="price-asc" selected data-i18n="hotel_sort_asc">السعر: من الأرخص للأغلى</option>
-            <option value="price-desc" data-i18n="hotel_sort_desc">السعر: من الأغلى للأرخص</option>
-            <option value="rating" data-i18n="sort_rating">الأعلى تقييمًا</option>
-            <option value="stars" data-i18n="hotel_sort_stars">الأكثر نجومًا</option>
-          </select>
-          <button class="btn btn-ghost" id="hotelsReset" data-i18n="reset">↺ إعادة ضبط</button>
-        </div>
-
-        <p class="results-count" id="hotelsCount"></p>
         <div class="cards-grid" id="hotelsGrid"></div>
-        <div class="empty-state" id="hotelsEmpty" hidden>
-          <span>🏨</span>
-          <h3 data-i18n="no_results">مفيش نتائج مطابقة</h3>
-        </div>
       </div>
     </section>
 
+    <!-- قسم محافظات مصر الـ 27 مع شريط تفاعلي للإظهار والإخفاء -->
     <section class="section" id="governorates">
       <div class="container">
         <header class="section-head reveal">
           <span class="pill" data-i18n="govs_pill">🗺️ الخريطة</span>
           <h2 data-i18n="govs_title">محافظات مصر الـ 27</h2>
-          <p data-i18n="govs_desc">دوس على أي محافظة تشوف أماكنها السياحية والفنادق المتاحة فيها.</p>
+          <p data-i18n="govs_desc">اضغط على الشريط أدناه لعرض واستكشاف جميع محافظات مصر.</p>
         </header>
-        <div class="chips-row reveal" id="govRegionFilter"></div>
-        <div class="gov-grid" id="governoratesGrid"></div>
+
+        <div class="govs-toggle-bar" id="govsToggleBar" role="button" tabindex="0">
+          <div class="govs-bar-content">
+            <span class="govs-bar-icon">🇪🇬</span>
+            <div>
+              <strong>محافظات مصر الـ 27</strong>
+              <small>اضغط لعرض أو إخفاء كافة المحافظات واستكشافها</small>
+            </div>
+          </div>
+          <span class="govs-bar-arrow" id="govsBarArrow">▼</span>
+        </div>
+
+        <div class="govs-content-wrapper" id="govsContentWrapper" hidden>
+          <div class="chips-row" id="govRegionFilter"></div>
+          <div class="gov-grid" id="governoratesGrid"></div>
+        </div>
       </div>
     </section>
 
