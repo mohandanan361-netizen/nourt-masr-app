@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e7f8c" />
+  <title data-i18n="doc_title">نوّرت مصر | دليلك السياحي الذكي</title>
+  <meta name="description" content="Nourt Masr - Your smart Egyptian tourism guide" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇪🇬</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-scene">
+      <svg viewBox="0 0 300 200" class="preloader-svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="pl-g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c070" /><stop offset="1" stop-color="#c9892f" /></linearGradient>
+          <linearGradient id="pl-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13a6b0" /><stop offset="1" stop-color="#0b6570" /></linearGradient>
+        </defs>
+        <circle cx="235" cy="55" r="30" fill="#f0c070" opacity=".85" />
+        <polygon points="30,165 110,45 190,165" fill="url(#pl-g1)" />
+        <polygon points="140,165 205,80 270,165" fill="url(#pl-g2)" />
+        <rect x="0" y="165" width="300" height="35" fill="#e6cf9f" opacity=".35" />
+      </svg>
+    </div>
+    <p class="preloader-text" data-i18n="brand">نوّرت مصر</p>
+    <span class="preloader-sub" data-i18n="preloader_sub">جاري تجهيز رحلتك…</span>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+
+      <a href="#home" class="brand">
+        <span class="brand-mark">🇪🇬</span>
+        <span class="brand-text">
+          <strong data-i18n="brand">نوّرت مصر</strong>
+          <small data-i18n="brand_sub">Nourt Masr</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="nav-link active" data-i18n="nav_home">الرئيسية</a>
+        <a href="#taxi" class="nav-link" data-i18n="nav_taxi">اطلب عربية</a>
+        <a href="#places" class="nav-link" data-i18n="nav_places">أماكن سياحية</a>
+        <a href="#hotels" class="nav-link" data-i18n="nav_hotels">الفنادق</a>
+        <a href="#governorates" class="nav-link" data-i18n="nav_govs">المحافظات</a>
+        <a href="#bookings" class="nav-link" data-i18n="nav_bookings">حجوزاتي</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-dropdown" id="langDropdown">
+          <button class="icon-btn lang-btn" id="langToggle" aria-haspopup="true" aria-expanded="false" title="Language">
+            <span id="langFlag">🌐</span>
+            <span id="langCode">AR</span>
+          </button>
+          <div class="lang-menu" id="langMenu" hidden></div>
+        </div>
+
+        <button class="icon-btn" id="themeToggle" title="Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <a href="#taxi" class="btn btn-primary nav-cta" data-i18n="nav_order">🚕 اطلب الآن</a>
+
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+        <div class="hero-grid-lines"></div>
+      </div>
+
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+          <span class="pill" data-i18n="hero_pill">🇪🇬 أهلاً بيك في أم الدنيا</span>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_title_1">نوّرت</span>
+            <span class="grad-text" data-i18n="hero_title_2">مصر</span>
+            <span class="hero-title-sub" data-i18n="hero_sub">رحلتك تبدأ من هنا</span>
+          </h1>
+
+          <p class="hero-desc" data-i18n="hero_desc">
+            عربية توصلك لباب الفندق، أجمل الأماكن السياحية في الـ 27 محافظة، وحجز فنادق بأسعار مرتّبة من الأرخص للأغلى — كل ده في تطبيق واحد.
+          </p>
+
+          <div class="hero-search-wrap">
+            <form class="hero-search" id="heroSearchForm" role="search" autocomplete="off">
+              <span class="hero-search-icon">🔍</span>
+              <input type="search" id="heroSearchInput" placeholder="ابحث…" data-i18n-ph="hero_search_ph" autocomplete="off" aria-label="Search" />
+              <button type="submit" class="btn btn-primary" data-i18n="hero_btn_search">ابحث</button>
+            </form>
+            <div class="search-dropdown" id="searchDropdown" hidden></div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#taxi" class="btn btn-primary btn-lg" data-i18n="hero_btn_taxi">🚕 اطلب عربية دلوقتي</a>
+            <a href="#hotels" class="btn btn-ghost btn-lg" data-i18n="hero_btn_hotels">🏨 شوف الفنادق</a>
+          </div>
+
+          <ul class="hero-points">
+            <li><span>✓</span> <em data-i18n="hero_p1">عربيات في كل المحافظات</em></li>
+            <li><span>✓</span> <em data-i18n="hero_p2">أسعار واضحة بدون مفاجآت</em></li>
+            <li><span>✓</span> <em data-i18n="hero_p3">دعم على مدار الساعة</em></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-head">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="hero-card-title" data-i18n="hero_card_title">رحلتك القادمة</span>
+            </div>
+
+            <svg viewBox="0 0 400 240" class="hero-scene" aria-hidden="true">
+              <defs>
+                <linearGradient id="h-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13a6b0" stop-opacity=".22" /><stop offset="1" stop-color="#13a6b0" stop-opacity="0" /></linearGradient>
+                <linearGradient id="h-p1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0c070" /><stop offset="1" stop-color="#c9892f" /></linearGradient>
+                <linearGradient id="h-p2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0a84f" /><stop offset="1" stop-color="#a86c22" /></linearGradient>
+                <linearGradient id="h-p3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d0d7dc" /><stop offset="1" stop-color="#9aa8b1" /></linearGradient>
+              </defs>
+              <rect width="400" height="240" fill="url(#h-sky)" rx="16" />
+              <circle cx="320" cy="58" r="34" fill="#f0c070" opacity=".9" />
+              <circle cx="320" cy="58" r="52" fill="#f0c070" opacity=".14" />
+              <polygon points="40,190 140,60 240,190" fill="url(#h-p1)" />
+              <polygon points="140,60 240,190 140,190" fill="#b87b2b" opacity=".55" />
+              <polygon points="180,190 260,95 340,190" fill="url(#h-p2)" />
+              <polygon points="260,95 340,190 260,190" fill="#96601c" opacity=".5" />
+              <polygon points="0,190 45,140 90,190" fill="url(#h-p3)" opacity=".7" />
+              <rect x="0" y="190" width="400" height="50" fill="#e8d3a6" opacity=".38" />
+              <path d="M0,215 Q100,205 200,218 T400,212 L400,240 L0,240 Z" fill="#13a6b0" opacity=".35" />
+            </svg>
+
+            <div class="hero-card-foot">
+              <div class="mini-info">
+                <span class="mini-emoji">🚕</span>
+                <div><strong>2,480</strong><small data-i18n="trips_today">رحلة اليوم</small></div>
+              </div>
+              <div class="mini-info">
+                <span class="mini-emoji">🏨</span>
+                <div><strong>1,120</strong><small data-i18n="bookings_today">حجز فندق</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-chip chip-1" data-i18n="chip_rating">⭐ 4.9 تقييم</div>
+          <div class="floating-chip chip-2" data-i18n="chip_support">🕒 دعم 24/7</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="stats-bar">
+      <div class="container stats-grid" id="statsGrid"></div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="services_pill">خدماتنا</span>
+          <h2 data-i18n="services_title">كل حاجة محتاجها في رحلتك</h2>
+          <p data-i18n="services_desc">من لحظة وصولك للمطار لحد آخر يوم في رحلتك — إحنا معاك.</p>
+        </header>
+
+        <div class="features-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon">🚕</div>
+            <h3 data-i18n="feat1_t">عربية توصلك فين ما كنت</h3>
+            <p data-i18n="feat1_d">اختار نوع العربية، حدّد مكانك ووجهتك، وهي جاية لك في دقائق بأسعار واضحة.</p>
+            <span class="feature-tag" data-i18n="feat1_tag">6 أنواع عربيات</span>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">🏛️</div>
+            <h3 data-i18n="feat2_t">أماكن تستاهل الزيارة</h3>
+            <p data-i18n="feat2_d">أكثر من 45 مكان سياحي في كل محافظات مصر، مع التقييمات وسعر الدخول.</p>
+            <span class="feature-tag" data-i18n="feat2_tag">مصنّفة وسهلة الفلترة</span>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">🏨</div>
+            <h3 data-i18n="feat3_t">احجز فندقك من الأرخص للأغلى</h3>
+            <p data-i18n="feat3_d">فلتر حسب المحافظة وعدد النجوم، ورتّب الأسعار تصاعدي أو تنازلي.</p>
+            <span class="feature-tag" data-i18n="feat3_tag">حساب تلقائي للإجمالي</span>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">🗺️</div>
+            <h3 data-i18n="feat4_t">الـ 27 محافظة كلها</h3>
+            <p data-i18n="feat4_d">من الإسكندرية لأسوان، ومن سيوة للغردقة — استكشف كل محافظة.</p>
+            <span class="feature-tag" data-i18n="feat4_tag">تغطية كاملة</span>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">💾</div>
+            <h3 data-i18n="feat5_t">حجوزاتك محفوظة</h3>
+            <p data-i18n="feat5_d">كل رحلة أو حجز فندق بيتسجل تلقائيًا في "حجوزاتي" على جهازك.</p>
+            <span class="feature-tag" data-i18n="feat5_tag">يعمل بدون إنترنت</span>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon">🌙</div>
+            <h3 data-i18n="feat6_t">وضع ليلي مريح للعين</h3>
+            <p data-i18n="feat6_d">بدّل بين الوضع النهاري والليلي بضغطة واحدة والموقع بيفتكر اختيارك.</p>
+            <span class="feature-tag" data-i18n="feat6_tag">تصميم مريح</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="taxi">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="taxi_pill">🚕 خدمة التوصيل</span>
+          <h2 data-i18n="taxi_title">اطلب عربية تجيلك لحد عندك</h2>
+          <p data-i18n="taxi_desc">حدّد مكان الانطلاق والوجهة، واختار نوع العربية، وإحنا نحسبلك السعر.</p>
+        </header>
+
+        <div class="taxi-layout">
+          <form class="card taxi-form reveal" id="taxiForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="tName" data-i18n="taxi_name">الاسم</label>
+                <input type="text" id="tName" placeholder="Ahmed" data-i18n-ph="taxi_ph_name" required />
+              </div>
+              <div class="field">
+                <label for="tPhone" data-i18n="taxi_phone">رقم الموبايل</label>
+                <input type="tel" id="tPhone" placeholder="01xxxxxxxxx" inputmode="tel" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="tFromGov" data-i18n="taxi_from_gov">محافظة الانطلاق</label>
+                <select id="tFromGov" required></select>
+              </div>
+              <div class="field">
+                <label for="tFromSpot" data-i18n="taxi_from_spot">نقطة الانطلاق</label>
+                <input type="text" id="tFromSpot" placeholder="Airport Terminal 3" data-i18n-ph="taxi_ph_from" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="tToGov" data-i18n="taxi_to_gov">محافظة الوصول</label>
+                <select id="tToGov" required></select>
+              </div>
+              <div class="field">
+                <label for="tToSpot" data-i18n="taxi_to_spot">نقطة الوصول</label>
+                <input type="text" id="tToSpot" placeholder="Hotel name" data-i18n-ph="taxi_ph_to" required />
+              </div>
+            </div>
+            <div class="field">
+              <label data-i18n="taxi_car">نوع العربية</label>
+              <div class="car-types" id="carTypes"></div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="tDate" data-i18n="taxi_date">تاريخ الرحلة</label>
+                <input type="date" id="tDate" required />
+              </div>
+              <div class="field">
+                <label for="tTime" data-i18n="taxi_time">الوقت</label>
+                <input type="time" id="tTime" value="10:00" required />
+              </div>
+              <div class="field">
+                <label for="tPassengers" data-i18n="taxi_pax">عدد الركاب</label>
+                <input type="number" id="tPassengers" min="1" max="50" value="2" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="tNotes" data-i18n="taxi_notes">ملاحظات إضافية</label>
+              <textarea id="tNotes" rows="2" data-i18n-ph="taxi_ph_notes"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" data-i18n="taxi_submit">🚕 احسب السعر واطلب العربية</button>
+            <p class="form-hint" data-i18n="taxi_hint">🔒 بياناتك محفوظة على جهازك فقط.</p>
+          </form>
+
+          <aside class="card taxi-result reveal" id="taxiResult">
+            <div class="result-empty" id="resultEmpty">
+              <div class="result-empty-icon">🗺️</div>
+              <h3 data-i18n="taxi_empty_t">لسه مطلبش عربية</h3>
+              <p data-i18n="taxi_empty_d">املأ البيانات على الشمال واضغط احسب السعر وهتلاقي كل التفاصيل هنا.</p>
+            </div>
+            <div class="result-body" id="resultBody" hidden></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="places">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="places_pill">🏛️ اكتشف</span>
+          <h2 data-i18n="places_title">أماكن سياحية تستاهل الزيارة</h2>
+          <p data-i18n="places_desc">فلتر حسب المحافظة أو التصنيف، واعرف سعر الدخول التقريبي.</p>
+        </header>
+
+        <div class="toolbar reveal">
+          <div class="toolbar-search">
+            <span>🔍</span>
+            <input type="search" id="placeSearch" placeholder="ابحث…" data-i18n-ph="places_search_ph" />
+          </div>
+          <select id="placeGov"><option value="" data-i18n="all_govs">كل المحافظات</option></select>
+          <select id="placeCat"><option value="" data-i18n="all_cats">كل التصنيفات</option></select>
+          <select id="placeSort">
+            <option value="rating" data-i18n="sort_rating">الأعلى تقييمًا</option>
+            <option value="price-asc" data-i18n="sort_price_asc">الأرخص دخولًا</option>
+            <option value="price-desc" data-i18n="sort_price_desc">الأغلى دخولًا</option>
+            <option value="name" data-i18n="sort_name">أبجديًا</option>
+          </select>
+          <button class="btn btn-ghost" id="placesReset" data-i18n="reset">↺ إعادة ضبط</button>
+        </div>
+
+        <p class="results-count" id="placesCount"></p>
+        <div class="cards-grid" id="placesGrid"></div>
+        <div class="empty-state" id="placesEmpty" hidden>
+          <span>🔎</span>
+          <h3 data-i18n="no_results">مفيش نتائج مطابقة</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="hotels">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="hotels_pill">🏨 الإقامة</span>
+          <h2 data-i18n="hotels_title">احجز فندقك بأفضل سعر</h2>
+          <p data-i18n="hotels_desc">الأسعار مرتبة من الأرخص للأغلى افتراضيًا.</p>
+        </header>
+
+        <div class="toolbar reveal">
+          <div class="toolbar-search">
+            <span>🔍</span>
+            <input type="search" id="hotelSearch" placeholder="ابحث…" data-i18n-ph="hotels_search_ph" />
+          </div>
+          <select id="hotelGov"><option value="" data-i18n="all_govs">كل المحافظات</option></select>
+          <select id="hotelStars">
+            <option value="" data-i18n="all_stars">كل التصنيفات</option>
+            <option value="5" data-i18n="stars_5">5 نجوم</option>
+            <option value="4" data-i18n="stars_4">4 نجوم</option>
+            <option value="3" data-i18n="stars_3">3 نجوم</option>
+          </select>
+          <select id="hotelSort">
+            <option value="price-asc" selected data-i18n="hotel_sort_asc">السعر: من الأرخص للأغلى</option>
+            <option value="price-desc" data-i18n="hotel_sort_desc">السعر: من الأغلى للأرخص</option>
+            <option value="rating" data-i18n="sort_rating">الأعلى تقييمًا</option>
+            <option value="stars" data-i18n="hotel_sort_stars">الأكثر نجومًا</option>
+          </select>
+          <button class="btn btn-ghost" id="hotelsReset" data-i18n="reset">↺ إعادة ضبط</button>
+        </div>
+
+        <p class="results-count" id="hotelsCount"></p>
+        <div class="cards-grid" id="hotelsGrid"></div>
+        <div class="empty-state" id="hotelsEmpty" hidden>
+          <span>🏨</span>
+          <h3 data-i18n="no_results">مفيش نتائج مطابقة</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="governorates">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="govs_pill">🗺️ الخريطة</span>
+          <h2 data-i18n="govs_title">محافظات مصر الـ 27</h2>
+          <p data-i18n="govs_desc">دوس على أي محافظة تشوف أماكنها السياحية والفنادق المتاحة فيها.</p>
+        </header>
+        <div class="chips-row reveal" id="govRegionFilter"></div>
+        <div class="gov-grid" id="governoratesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="bookings">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="pill" data-i18n="bookings_pill">💾 محفوظاتك</span>
+          <h2 data-i18n="bookings_title">حجوزاتي</h2>
+          <p data-i18n="bookings_desc">كل رحلاتك وحجوزاتك محفوظة على جهازك.</p>
+        </header>
+
+        <div class="bookings-toolbar reveal">
+          <div class="chips-row" id="bookingFilters">
+            <button class="chip active" data-filter="all" data-i18n="filter_all">الكل</button>
+            <button class="chip" data-filter="taxi" data-i18n="filter_taxi">🚕 رحلات</button>
+            <button class="chip" data-filter="hotel" data-i18n="filter_hotel">🏨 فنادق</button>
+            <button class="chip" data-filter="place" data-i18n="filter_place">⭐ مفضلة</button>
+          </div>
+          <button class="btn btn-ghost btn-danger-ghost" id="clearBookings" data-i18n="clear_all">🗑️ مسح الكل</button>
+        </div>
+
+        <div class="bookings-list" id="bookingsList"></div>
+
+        <div class="empty-state" id="bookingsEmpty">
+          <span>📭</span>
+          <h3 data-i18n="bookings_empty_t">لسه مفيش حجوزات</h3>
+          <p data-i18n="bookings_empty_d">ابدأ بطلب عربية أو احجز فندق وهتلاقي كل حاجة هنا.</p>
+          <a href="#taxi" class="btn btn-primary" data-i18n="nav_order">🚕 اطلب عربية</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-col footer-brand">
+        <a href="#home" class="brand">
+          <span class="brand-mark">🇪🇬</span>
+          <span class="brand-text"><strong data-i18n="brand">نوّرت مصر</strong><small data-i18n="brand_sub">Nourt Masr</small></span>
+        </a>
+        <p data-i18n="footer_about">تطبيق سياحي شامل يوصلك لأي مكان في مصر.</p>
+        <div class="social-row">
+          <a href="#" class="social-btn" aria-label="Facebook">f</a>
+          <a href="#" class="social-btn" aria-label="Instagram">◎</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">✆</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_links">روابط سريعة</h4>
+        <ul>
+          <li><a href="#home" data-i18n="nav_home">الرئيسية</a></li>
+          <li><a href="#taxi" data-i18n="nav_taxi">اطلب عربية</a></li>
+          <li><a href="#places" data-i18n="nav_places">أماكن سياحية</a></li>
+          <li><a href="#hotels" data-i18n="nav_hotels">الفنادق</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_services">خدمات</h4>
+        <ul>
+          <li><a href="#taxi" data-i18n="footer_s1">توصيل من المطار</a></li>
+          <li><a href="#taxi" data-i18n="footer_s2">رحلات يومية</a></li>
+          <li><a href="#hotels" data-i18n="footer_s3">حجز فنادق</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">تواصل معنا</h4>
+        <ul class="contact-list">
+          <li>📞 <span dir="ltr">+20 100 000 0000</span></li>
+          <li>✉️ info@nourtmasr.com</li>
+          <li data-i18n="footer_loc">📍 القاهرة، مصر</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="year"></span> <span data-i18n="footer_rights">نوّرت مصر — كل الحقوق محفوظة.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Top">↑</button>
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <div class="modal-overlay" id="modalOverlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
